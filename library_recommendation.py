@@ -334,8 +334,8 @@ def recommend_books(student_requirements, top_recomendation=None, available_only
     summary_highest_score = max(summary_scores) if summary_scores else 0
     summary_average_score = sum(summary_scores) / len(summary_scores) if summary_scores else 0.0
 
-    if top_n is not None:
-        recommendations = recommendations[:top_n]  # list slicing demonstrates Top-N
+    if top_recomendation is not None:
+        recommendations = recommendations[:top_recomendation]  # list slicing demonstrates Top-N
 
     print("\n" + "=" * 90)
     print("RANKED BOOK RECOMMENDATIONS")
@@ -421,7 +421,6 @@ def main():
     """Main menu; loops until the user chooses Exit."""
     print("=" * 90)
     print("UNIVERSITY LIBRARY BOOK RECOMMENDATION SYSTEM")
-    print("Subject-based rules | No AI/ML | Standard library only")
     print("=" * 90)
 
     while True:
