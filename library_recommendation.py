@@ -326,8 +326,7 @@ def recommend_books(student_requirements, top_recomendation=None, available_only
 
     relevant_count = len(recommendations)
 
-    # Calculate summary statistics from the full filtered recommendation set,
-    # before applying Top-N, so the report describes all relevant results.
+    # Calculate summary statistics from the full filtered recommendation set
     summary_scores = [item["score"] for item in recommendations]
     summary_highly_recommended = sum(1 for item in recommendations if item["score"] >= 14)
     summary_available = sum(1 for item in recommendations if item["book"]["available"])
@@ -335,7 +334,7 @@ def recommend_books(student_requirements, top_recomendation=None, available_only
     summary_average_score = sum(summary_scores) / len(summary_scores) if summary_scores else 0.0
 
     if top_recomendation is not None:
-        recommendations = recommendations[:top_recomendation]  # list slicing demonstrates Top-N
+        recommendations = recommendations[:top_recomendation]  
 
     print("\n" + "=" * 90)
     print("RANKED BOOK RECOMMENDATIONS")
